@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="questionsApp">
+<head>
+  <meta charset="utf-8">
+  <title>Retrieve Question</title>
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+
+<body ng-controller="TheController">  
+  <div class="container">
+    <h1 id="questionText"></h1>
+    <p>
+      <a class="btn btn-default" href="#" role="button" id="answerChoice1"></a>
+      <a class="btn btn-default" href="#" role="button" id="answerChoice2"></a>
+    </p>
+  </div>
+  
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.5.0.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+  <script src="controller.js"></script>
+  <script type="text/javascript">
+
+
+
+    Parse.initialize("UZ0MDbTRawyYCZn6qK566huwg19Yvhuj9VRwDY6j", "0m415LLPm7cqPqffhaOt81Mjbf8lUSadMHZU9CLj");
+    var Question = Parse.Object.extend("Question");
+    
+    function getPosts() {
+      var query = new Parse.Query(Question);
+      query.find({
+        success: function(results) {
+          for(var i in results) {
+            var question = results[i].get("questionText");
+            var answers = results[i].get("answers");
+            console.log(question);
+            console.log(answers);
+          }
+        },
+        error: function(error) {
+          console.log("Query Error: " + error.message);
+        }
+      });
+    }
+
+    getPosts();
+
+    // var Question = Parse.Object.extend("Question");
+    // var query = new Parse.Query(Question);
+    // query.get("BHQGdWNYIF", {
+    //   success: function(question) {
+    //     // The object was retrieved successfully.
+    //     var questionText = question.get("questionText");
+    //     var answers = question.get("answers");
+    //     // var correctAnswer = question.get("correctAnswer");
+    //     // console.log(correctAnswer);
+    //     document.getElementById("questionText").innerHTML = questionText;
+    //     document.getElementById("answerChoice1").innerHTML = answers[0];
+    //     document.getElementById("answerChoice2").innerHTML = answers[1];
+    //   },
+    //   error: function(object, error) {
+    //     // The object was not retrieved successfully.
+    //     // error is a Parse.Error with an error code and message.
+    //   }
+    // });
+  </script>
+</body>
+</html>
