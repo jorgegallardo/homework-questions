@@ -21,11 +21,9 @@
   <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.5.0.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
   <script src="controller.js"></script>
+  
   <script type="text/javascript">
-
-
-
-    Parse.initialize("UZ0MDbTRawyYCZn6qK566huwg19Yvhuj9VRwDY6j", "0m415LLPm7cqPqffhaOt81Mjbf8lUSadMHZU9CLj");
+    Parse.initialize("2Hok8QvZcIKAfvyNu28JPTzjhhJwimSC9t26xq6w", "v6GrWsGgtqU8maRaSK1JUQ0mkvS7FKdn8ohQkFVf");
     var Question = Parse.Object.extend("Question");
     
     function getPosts() {
@@ -34,9 +32,9 @@
         success: function(results) {
           for(var i in results) {
             var question = results[i].get("questionText");
-            var answers = results[i].get("answers");
+            var answerChoices = results[i].get("answerChoices");
             console.log(question);
-            console.log(answers);
+            console.log(answerChoices);
           }
         },
         error: function(error) {

@@ -9,23 +9,30 @@
 
 <body ng-controller="TheController">
   <div class="container">
-    <h1>Question Creation Page</h1>
+    <h1 class="text-center">Question Creation Page</h1>
 
-    <form id="createQuestion">
-      <div class="form-group">
-      <textarea class="form-control" rows="3" placeholder="Enter Question" id="questionText"></textarea>
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Enter Answer Choice 1" id="answerChoice1">
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Enter Answer Choice 2" id="answerChoice2">
-      </div>
-      <div class="form-group">
-        <input type="submit" class="btn btn-primary">
-      </div>
-    </form>
-    
+    <div class="row col-md-6 col-md-offset-3">
+      <form id="createQuestion">
+        <div class="form-group">
+        <textarea class="form-control" rows="3" placeholder="Enter Question" id="questionText"></textarea>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Enter Answer Choice 1" id="answerChoice1">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Enter Answer Choice 2" id="answerChoice2">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Enter Answer Choice 3" id="answerChoice3">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Enter Answer Choice 4" id="answerChoice4">
+        </div>
+        <div class="form-group">
+          <input type="submit" class="btn btn-primary">
+        </div>
+      </form>
+    </div>
 
 <!--     <ul>
       <li ng-repeat="phone in phones">
@@ -42,7 +49,7 @@
   <script src="controller.js"></script>
 
   <script type="text/javascript">
-    Parse.initialize("UZ0MDbTRawyYCZn6qK566huwg19Yvhuj9VRwDY6j", "0m415LLPm7cqPqffhaOt81Mjbf8lUSadMHZU9CLj");
+    Parse.initialize("2Hok8QvZcIKAfvyNu28JPTzjhhJwimSC9t26xq6w", "v6GrWsGgtqU8maRaSK1JUQ0mkvS7FKdn8ohQkFVf");
     var Question = Parse.Object.extend("Question");
 
     $("#createQuestion").submit(function(event) {
@@ -50,10 +57,12 @@
       var questionText = $("#questionText").val();
       var answerChoice1 = $("#answerChoice1").val();
       var answerChoice2 = $("#answerChoice2").val();
-      var newQuestion = new Question();
+      var answerChoice3 = $("#answerChoice3").val();
+      var answerChoice4 = $("#answerChoice4").val();
 
+      var newQuestion = new Question();
       newQuestion.set("questionText", questionText);
-      newQuestion.set("answers", [answerChoice1, answerChoice2]);
+      newQuestion.set("answerChoices", [answerChoice1, answerChoice2, answerChoice3, answerChoice4]);
 
       newQuestion.save(null, {
         success: function(newQuestion) {
