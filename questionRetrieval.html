@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="questionsApp">
+<html>
 <head>
   <meta charset="utf-8">
   <title>Retrieve Question</title>
@@ -7,20 +7,15 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 
-<body ng-controller="TheController">  
+<body>  
   <div class="container">
-    <h1 id="questionText"></h1>
-    <p>
-      <a class="btn btn-default" href="#" role="button" id="answerChoice1"></a>
-      <a class="btn btn-default" href="#" role="button" id="answerChoice2"></a>
-    </p>
+
   </div>
   
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.5.0.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
-  <script src="controller.js"></script>
   
   <script type="text/javascript">
     Parse.initialize("2Hok8QvZcIKAfvyNu28JPTzjhhJwimSC9t26xq6w", "v6GrWsGgtqU8maRaSK1JUQ0mkvS7FKdn8ohQkFVf");
@@ -42,27 +37,8 @@
         }
       });
     }
-
     getPosts();
 
-    // var Question = Parse.Object.extend("Question");
-    // var query = new Parse.Query(Question);
-    // query.get("BHQGdWNYIF", {
-    //   success: function(question) {
-    //     // The object was retrieved successfully.
-    //     var questionText = question.get("questionText");
-    //     var answers = question.get("answers");
-    //     // var correctAnswer = question.get("correctAnswer");
-    //     // console.log(correctAnswer);
-    //     document.getElementById("questionText").innerHTML = questionText;
-    //     document.getElementById("answerChoice1").innerHTML = answers[0];
-    //     document.getElementById("answerChoice2").innerHTML = answers[1];
-    //   },
-    //   error: function(object, error) {
-    //     // The object was not retrieved successfully.
-    //     // error is a Parse.Error with an error code and message.
-    //   }
-    // });
   </script>
 </body>
 </html>

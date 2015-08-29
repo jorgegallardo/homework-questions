@@ -7,91 +7,40 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 
-<body ng-controller="TheController">
+<body ng-controller="CreateQuestionController">
   <div class="container">
     <h1 class="text-center">Question Creation Page</h1>
 
-    <div class="row col-md-6 col-md-offset-3">
-      <form id="createQuestion">
-        <div class="form-group">
-        <textarea class="form-control" rows="3" placeholder="Enter Question" id="questionText"></textarea>
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Enter Answer Choice 1" id="answerChoice1">
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Enter Answer Choice 2" id="answerChoice2">
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Enter Answer Choice 3" id="answerChoice3">
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Enter Answer Choice 4" id="answerChoice4">
-        </div>
-        <div class="form-group">
-          <input type="submit" class="btn btn-primary">
-        </div>
-      </form>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <form id="createQuestion" ng-submit="submitQuestion()">
+          <div class="form-group">
+          <textarea class="form-control" rows="3" placeholder="Enter Question" ng-model="question.text"></textarea>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Enter Answer Choice 1" ng-model="question.answerChoice1">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Enter Answer Choice 2" ng-model="question.answerChoice2">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Enter Answer Choice 3" ng-model="question.answerChoice3">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Enter Answer Choice 4" ng-model="question.answerChoice4">
+          </div>
+          <div class="form-group">
+            <input type="submit" class="btn btn-primary">
+          </div>
+        </form>
+      </div> 
     </div>
-
-<!--     <ul>
-      <li ng-repeat="phone in phones">
-        <span>{{phone.name}}</span>
-        <p>{{phone.snippet}}</p>
-      </li>
-    </ul> -->
   </div> <!-- container -->
 
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.5.0.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
-  <script src="controller.js"></script>
-
-  <script type="text/javascript">
-    Parse.initialize("2Hok8QvZcIKAfvyNu28JPTzjhhJwimSC9t26xq6w", "v6GrWsGgtqU8maRaSK1JUQ0mkvS7FKdn8ohQkFVf");
-    var Question = Parse.Object.extend("Question");
-
-    $("#createQuestion").submit(function(event) {
-      event.preventDefault(); //normally when submitting a form the browser loads another page/doc and we want to stay on our creation page
-      var questionText = $("#questionText").val();
-      var answerChoice1 = $("#answerChoice1").val();
-      var answerChoice2 = $("#answerChoice2").val();
-      var answerChoice3 = $("#answerChoice3").val();
-      var answerChoice4 = $("#answerChoice4").val();
-
-      var newQuestion = new Question();
-      newQuestion.set("questionText", questionText);
-      newQuestion.set("answerChoices", [answerChoice1, answerChoice2, answerChoice3, answerChoice4]);
-
-      newQuestion.save(null, {
-        success: function(newQuestion) {
-          console.log("New object created with objectId: " + newQuestion.id);
-        },
-        error: function(error) {
-          console.log("Error: " + error.message);
-        }
-      });
-    });
-
-    // var Question = Parse.Object.extend("Question");
-    // var newQuestion = new Question();
-
-    // newQuestion.set("questionText", "What color is the sky?");
-    // newQuestion.set("answers", ["Blue", "Red"]);
-    // newQuestion.set("correctAnswer", 0);
-
-    // newQuestion.save(null, {
-    //   success: function(newQuestion) {
-    //     // Execute any logic that should take place after the object is saved.
-    //     alert('New object created with objectId: ' + newQuestion.id);
-    //   },
-    //   error: function(newQuestion, error) {
-    //     // Execute any logic that should take place if the save fails.
-    //     // error is a Parse.Error with an error code and message.
-    //     alert('Failed to create new object, with error code: ' + error.message);
-    //   }
-    // });
-  </script>
+  <script src="CreateQuestionController.js"></script>
 </body>
 </html>
