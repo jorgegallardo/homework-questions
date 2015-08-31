@@ -1,6 +1,6 @@
 var app = angular.module('questionsApp', []);
 
-app.controller('CreateQuestionController', function ($scope) {
+app.controller('CreateQuestionController', ['$scope', function ($scope) {
   Parse.initialize("2Hok8QvZcIKAfvyNu28JPTzjhhJwimSC9t26xq6w", "v6GrWsGgtqU8maRaSK1JUQ0mkvS7FKdn8ohQkFVf");
   var Question = Parse.Object.extend("Question");
 
@@ -19,4 +19,4 @@ app.controller('CreateQuestionController', function ($scope) {
 
     $scope.question = {};
   }
-});
+}]);
