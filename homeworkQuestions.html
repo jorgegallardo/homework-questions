@@ -17,7 +17,7 @@
             <li ng-repeat="question in allQuestions"
             class="
             {{ ($index === activeQuestion) ? 'active':'disabled' }}
-            {{ (question.questionState === 'answered') ? 'unanswered':'answered' }}
+            {{ (question.questionState === 'answered') ? 'answered':'unanswered' }}
             {{ (question.correctness === 'correct') ? 'correct':'incorrect' }}
             "><a href="#">Question {{ $index + 1 }}</a></li>
           </ul>
@@ -33,16 +33,15 @@
           <h3>{{ question.questionText }}</h3>
           <hr>
           <!-- If there's a picture, maybe it could be inserted here? -->
-          <a href="#" class="btn btn-block btn-default" ng-repeat="answer in allQuestions[$index].possibleAnswers" style="white-space: normal;"
+          <a href="#" ng-repeat="answer in allQuestions[$index].possibleAnswers" class="btn btn-block btn-default" style="white-space: normal;"
               ng-class="{
               selected:isSelected($parent.$index, $index),
               correct:isCorrect($parent.$index, $index)
             }"
-              ng-click="selectAnswer($parent.$index, $index)">
+              ng-click="selectAnswer($parent.$index, $index); continue()">
               {{ answer.text }}
           </a>
         </div>
-        <div class="btn btn-default" ng-click="selectContinue()">Continue</div>
       </div>
     </div>
     </div> <!-- row -->
