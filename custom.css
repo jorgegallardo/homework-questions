@@ -48,3 +48,15 @@
   background-color: #d9534f;
   border-color: #ac2925;
 }
+
+.btn-default.selected{
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #ac2925;
+}
+
+.btn-default.correct{
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #3e8f3e;
+}

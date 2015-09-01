@@ -21,11 +21,9 @@ app.controller('HomeworkController', ['$scope', '$http', '$sce', function ($scop
 
       if(answerIndex === correctAnswer) {
         $scope.allQuestions[questionIndex].correctness = 'correct';
-        alert("right");
         $scope.score++;
       } else {
         $scope.allQuestions[questionIndex].correctness = 'incorrect';
-        alert("wrong");
       }
       $scope.allQuestions[questionIndex].questionState = 'answered';
     }
