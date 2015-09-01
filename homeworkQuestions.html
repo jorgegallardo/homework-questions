@@ -54,8 +54,13 @@
       <br>
       <div
         class="btn btn-default {{ (question.questionState === 'answered') ? 'ng-show':'ng-hide' }}"
-        ng-click="nextQuestion()">Continue</div>
+        ng-click="nextQuestion()">Continue
+      </div>
     </div>
+    <div class="results {{ (activeQuestion === totalQuestions) ? 'ng-show':'ng-hide' }}">
+      <h3>Results</h3>
+      <p>You scored {{ percentage }}% by correctly answering {{ score }} of {{ totalQuestions }} questions.</p>
+    </div> <!-- results -->
     </div> <!-- row -->
 
   </div> <!-- container -->

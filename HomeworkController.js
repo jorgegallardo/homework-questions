@@ -27,6 +27,7 @@ app.controller('HomeworkController', ['$scope', '$http', '$sce', function ($scop
       }
       $scope.allQuestions[questionIndex].questionState = 'answered';
     }
+    $scope.percentage = (($scope.score/$scope.totalQuestions) * 100).toFixed(1);
   }
 
   $scope.isSelected = function(questionIndex, answerIndex) {
