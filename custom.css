@@ -21,8 +21,7 @@
   box-sizing: border-box;
 }
 
-.pagination > .active.unanswered > a {
-  z-index: 2;
+.pagination > .active.unanswered.incorrect > a { /*not really incorrect, but still unanswered*/
   color: #fff;
   cursor: default;
   background-color: #337ab7;

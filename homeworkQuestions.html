@@ -14,12 +14,14 @@
       <nav>
         <div class="text-center">
           <ul class="pagination">
-            <li ng-repeat="question in allQuestions"
-            class="
-            {{ ($index === activeQuestion) ? 'active':'disabled' }}
-            {{ (question.questionState === 'answered') ? 'answered':'unanswered' }}
-            {{ (question.correctness === 'correct') ? 'correct':'incorrect' }}
-            "><a href="#">Question {{ $index + 1 }}</a></li>
+            <li
+              ng-repeat="question in allQuestions"
+              class="
+                {{ ($index === activeQuestion) ? 'active':'disabled' }}
+                {{ (question.questionState === 'answered') ? 'answered':'unanswered' }}
+                {{ (question.correctness === 'correct') ? 'correct':'incorrect' }}
+              ">
+              <a href="#">Question {{ $index + 1 }}</a></li>
           </ul>
         </div>
       </nav>
@@ -27,13 +29,16 @@
     </div> <!-- row -->
 
     <div class="row">
-    <div ng-repeat="question in allQuestions" class="col-md-6 col-md-offset-3 text-center {{ ($index === activeQuestion) ? 'ng-show':'ng-hide' }}">
+    <div
+      ng-repeat="question in allQuestions"
+      class="col-md-6 col-md-offset-3 text-center {{ ($index === activeQuestion) ? 'ng-show':'ng-hide' }}">
       <div class="box">
         <div class="box-content">
           <h3>{{ question.questionText }}</h3>
           <hr>
           <!-- If there's a picture, maybe it could be inserted here? -->
-          <a href="#"
+          <a
+            href="#"
             ng-repeat="answer in allQuestions[$index].possibleAnswers"
             class="btn btn-block btn-default"
             style="white-space: normal;"
@@ -41,11 +46,15 @@
               selected:isSelected($parent.$index, $index),
               correct:isCorrect($parent.$index, $index)
               }"
-            ng-click="selectAnswer($parent.$index, $index); nextQuestion()">
+            ng-click="selectAnswer($parent.$index, $index); ">
             {{ answer.text }}
           </a>
         </div>
       </div>
+      <br>
+      <div
+        class="btn btn-default {{ (question.questionState === 'answered') ? 'ng-show':'ng-hide' }}"
+        ng-click="nextQuestion()">Continue</div>
     </div>
     </div> <!-- row -->
 
