@@ -27,7 +27,6 @@
 			{"id": 2, "text": "two parents, and twice as much DNA as either parent"},
 			{"id": 3, "text": "two parents, and the same chromosome number as each parent"}
 		],
-		"correct": 1,
-		"feedback": "Hint: Not 2 parents!"
+		"correct": 1
 	}
 ]
