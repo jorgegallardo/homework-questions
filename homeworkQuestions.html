@@ -27,19 +27,22 @@
     </div> <!-- row -->
 
     <div class="row">
-    <div ng-repeat="question in allQuestions" class="col-md-6 col-md-offset-3 text-center">
+    <div ng-repeat="question in allQuestions" class="col-md-6 col-md-offset-3 text-center {{ ($index === activeQuestion) ? 'ng-show':'ng-hide' }}">
       <div class="box">
         <div class="box-content">
           <h3>{{ question.questionText }}</h3>
           <hr>
           <!-- If there's a picture, maybe it could be inserted here? -->
-          <a href="#" ng-repeat="answer in allQuestions[$index].possibleAnswers" class="btn btn-block btn-default" style="white-space: normal;"
-              ng-class="{
+          <a href="#"
+            ng-repeat="answer in allQuestions[$index].possibleAnswers"
+            class="btn btn-block btn-default"
+            style="white-space: normal;"
+            ng-class="{
               selected:isSelected($parent.$index, $index),
               correct:isCorrect($parent.$index, $index)
-            }"
-              ng-click="selectAnswer($parent.$index, $index); continue()">
-              {{ answer.text }}
+              }"
+            ng-click="selectAnswer($parent.$index, $index); nextQuestion()">
+            {{ answer.text }}
           </a>
         </div>
       </div>

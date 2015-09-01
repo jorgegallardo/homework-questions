@@ -39,7 +39,7 @@ app.controller('HomeworkController', ['$scope', '$http', '$sce', function ($scop
     return $scope.allQuestions[questionIndex].correctAnswer === answerIndex;
   };
 
-  $scope.continue = function() {
+  $scope.nextQuestion = function() {
     return $scope.activeQuestion++;
   };
 }]);
