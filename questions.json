@@ -40,5 +40,13 @@
 			{"id": 4, "text": "Not correct"}
 		],
 		"correct": 1
+	},
+	{
+		"question": "What color is yellow?",
+		"answers": [
+			{"id": 0, "text": "Black"},
+			{"id": 1, "text": "Yellow"}
+		],
+		"correct": 1
 	}
 ]
