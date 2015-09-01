@@ -13,6 +13,7 @@ app.controller('QuizController', ['$scope', '$http', '$sce', function ($scope, $
 
 	$scope.selectAnswer = function(questionIndex, answerIndex) {
 		var questionState = $scope.myQuestions[questionIndex].questionState;
+		
 		if(questionState != 'answered') {
 			$scope.myQuestions[questionIndex].selectedAnswer = answerIndex;
 			var correctAnswer = $scope.myQuestions[questionIndex].correct;

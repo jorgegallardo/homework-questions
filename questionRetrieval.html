@@ -28,6 +28,7 @@
         {{ myQuestion.questionState === 'answered' ? 'answered':'unanswered' }}
         {{ $index === activeQuestion ? 'active':'inactive' }}"
         ng-repeat="myQuestion in myQuestions">
+        
       <p class="txt">{{ myQuestion.question }}</p>
 
       <p class="ans" ng-class="{

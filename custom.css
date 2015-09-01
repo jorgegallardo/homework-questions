@@ -1,0 +1,51 @@
+.box {
+  background:#fff;
+  transition:all 0.2s ease;
+  border:2px dashed #dadada;
+  margin-top: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-clip: padding-box;
+  padding: 0 20px 20px 20px;
+  min-height: 340px;
+}
+
+.box:hover {
+  border:2px solid #525C7A;
+}
+
+.box .box-content {
+  padding: 16px;
+  border-radius: 0 0 2px 2px;
+  background-clip: padding-box;
+  box-sizing: border-box;
+}
+
+.pagination > .active.unanswered > a {
+  z-index: 2;
+  color: #fff;
+  cursor: default;
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+
+.pagination > .disabled.unanswered > a {
+  color: #777;
+  cursor: not-allowed;
+  background-color: #fff;
+  border-color: #ddd;
+}
+
+.pagination > .disabled.answered.correct > a {
+  cursor: not-allowed;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #3e8f3e;
+}
+
+.pagination > .disabled.answered.incorrect > a {
+  cursor: not-allowed;
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #ac2925;
+}

@@ -74,9 +74,9 @@ body {
 #myQuiz .intro.inactive, #myQuiz .inactive.answered { left: -1350px; }
 
 #myQuiz { height: 1000px; }
-#myQuiz .results { top: 650px !important; left: 40px !important; }
+#myQuiz .results { top: 750px !important; left: 40px !important; }
 
-@media screen and (max-width: 650px) {
+/*@media screen and (max-width: 650px) {
   body { padding: 0; margin: 0; }
   #myQuiz { width: 320px; background-size: 320px auto; }
   #myQuiz .progress { width: 300px; top: 110px; left: 25px; }
@@ -90,4 +90,4 @@ body {
   #myQuiz .results a.btn { margin-bottom: 20px; }
   #myQuiz .active { left: 25px; }
   #myQuiz .intro.inactive, #myQuiz .inactive.answered { left: -650px; }
-}
+}*/

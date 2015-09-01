@@ -1,0 +1,33 @@
+[
+	{
+		"questionText": "Which statement describes a situation that would reduce the stability of a forest ecosystem?",
+		"possibleAnswers": [
+			{"id": 0, "text": "A fierce predator is removed from the ecosystem."},
+			{"id": 1, "text": "The number of producers remains constant in the ecosystem."},
+			{"id": 2, "text": "Organisms frequently interact within the ecosystem."},
+			{"id": 3, "text": "The energy in the ecosystem flows from the Sun."}
+		],
+		"correct": 0
+	},
+		{
+		"questionText": "Although the digestive system is primarily responsible for the breakdown of food, this process can be disrupted if the circulatory system malfunctions. The best explanation for this disruption is that",
+		"possibleAnswers": [
+			{"id": 0, "text": "human body systems interact with each other to perform life functions"},
+			{"id": 1, "text": "the circulatory system is the control center of the body"},
+			{"id": 2, "text": "the digestive system and the circulatory system have many organs in common"},
+			{"id": 3, "text": "the circulatory system is responsible for the coordination of life functions, including the breakdown of food"}
+		],
+		"correct": 0
+	},
+		{
+		"questionText": "When an organism reproduces asexually, it usually has",
+		"possibleAnswers": [
+			{"id": 0, "text": "only one parent, and half as much DNA as the parent"},
+			{"id": 1, "text": "only one parent, and the same chromosome number as the parent"},
+			{"id": 2, "text": "two parents, and twice as much DNA as either parent"},
+			{"id": 3, "text": "two parents, and the same chromosome number as each parent"}
+		],
+		"correct": 1,
+		"feedback": "Hint: Not 2 parents!"
+	}
+]
